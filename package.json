@@ -1,0 +1,29 @@
+{
+  "name": "image-hosting-service",
+  "version": "1.0.0",
+  "description": "users can upload images",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "server",
+    "dev": "nodemon server"
+  },
+  "keywords": [
+    "multer",
+    "node",
+    "express",
+    "mongodb"
+  ],
+  "author": "daniel kabagambe",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.0.3",
+    "ejs": "^3.1.8",
+    "express": "^4.18.2",
+    "mongoose": "^6.9.1",
+    "multer": "^1.4.5-lts.1"
+  },
+  "devDependencies": {
+    "nodemon": "^2.0.20"
+  }
+}
