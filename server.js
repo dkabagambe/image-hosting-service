@@ -44,8 +44,16 @@ const upload = multer({ storage: storage }).single("dbimages");
 app.use(express.static("public"));
 //first use the get router and see
 app.get("/", (req, res) => {
-  res.render("index.ejs");
+  imageModel.find({}, (err, data) => {
+    if (err) {
+      console.log(err);
+      res.send(err);
+    } else {
+      res.render("index", { data: data });
+    }
+  });
 });
+
 app.post("/upload", (req, res) => {
   upload(req, res, (err) => {
     if (err) {
