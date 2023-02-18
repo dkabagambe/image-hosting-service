@@ -5,3 +5,48 @@
   
 [dev]
   command = "npm run start"
+
+[[plugins]]
+  package = "@netlify/plugin-functions"
+  
+[[plugins]]
+  package = "@netlify/plugin-cache"
+  
+[[redirects]]
+  from = "/api/*"
+  to = "/.netlify/functions/:splat"
+  status = 200
+  
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Frame-Options = "DENY"
+    X-XSS-Protection = "1; mode=block"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+  
+[[redirects]]
+  from = "/images/*"
+  to = "/images/:splat"
+  status = 200
+  force = true
+  
+[[redirects]]
+  from = "/favicon.ico"
+  to = "/images/favicon.ico"
+  status = 200
+  
+[[redirects]]
+  from = "/robots.txt"
+  to = "/robots.txt"
+  status = 200
+  
+[[redirects]]
+  from = "/sitemap.xml"
+  to = "/sitemap.xml"
+  status = 200
