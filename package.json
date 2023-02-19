@@ -3,13 +3,16 @@
   "version": "1.0.0",
   "description": "users can upload images",
   "main": "server.js",
-  "scripts": {
+ "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "start": "node server.js",
-    "build": "npm run build && mv public build",
-    "predeploy": "mkdir -p build",
+    "build": "npm run build:client && npm run build:server",
+    "build:client": "webpack --mode production",
+    "build:server": "babel src/server -d build/server --ignore node_modules",
+    "predeploy": "npm run build",
     "dev": "nodemon server"
-  },
+},
+
 
   "keywords": [
     "multer",
