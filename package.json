@@ -6,9 +6,7 @@
 "scripts": {
      "start": "node server.js"
     "predeploy": "npm run build",
-    "build:client": "webpack",
-    "build:server": "babel src/server --out-dir dist/server",
-    "build": "npm run build:client && npm run build:server",
+    
     "dev": "nodemon server"
 },
   "keywords": [
