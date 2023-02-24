@@ -4,7 +4,7 @@
   "description": "users can upload images",
   "main": "server.js",
 "scripts": {
-    "start": "node server.js",
+     "start": "node server.js"
     "predeploy": "npm run build",
     "build:client": "webpack",
     "build:server": "babel src/server --out-dir dist/server",
